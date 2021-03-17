@@ -1,0 +1,362 @@
+/*CSS Global */
+@font-face{
+    font-family: 'AirbnbCerealBook';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../font/AirbnbCerealBook.woff')
+    format('woff');
+}
+body {
+    font-family: 'AirbnbCerealBook', sans-serif;
+}
+.hide {
+    display: none;
+}
+.show {
+    display: block !important;
+}
+.app-body {
+    height: 87.5vh;
+}
+.app-content {
+    position: relative;
+    background-color: rgba(190, 195, 202, 0.3);
+    width: 100%;
+    padding: 20px;
+    overflow: auto;
+    box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.btn:focus, .btn:active {
+    box-shadow: none;
+}
+.btn-lightblue {
+    background-color: #57CAD5;
+    color: white;
+    font-size: 25px;
+    line-height: 33px;
+    font-weight: bold;
+}
+.btn-lightblue:hover {
+    background-color: #57cad5e7;
+    color: white;
+}
+.btn-pink {
+    background-color: #F24F8A;
+    color: white;
+    font-size: 25px;
+    line-height: 33px;
+    font-weight: bold;
+}
+.btn-pink:hover {
+    background-color: #f24f8bf3;
+    color: white;
+}
+select:focus , select:active {
+    box-shadow: none;
+    outline: none;
+}
+/* Global */
+
+/* CSS Component Navbar */
+.app-navbar{
+    position: relative;
+    -webkit-box-shadow: inset 0px -3px 0px -1px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 0px -3px 0px -1px rgba(0,0,0,0.2);
+    box-shadow: inset 0px -3px 0px -1px rgba(0,0,0,0.2);
+}
+.app-navbar-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    line-height: 39px;
+    font-weight: bold;
+    z-index: -1;
+}
+.link-menu {
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px;
+    height: 100%;
+    cursor: pointer;
+}
+.link-menu:hover {
+    background-color: #ececec;
+}
+.search-input {
+    position: absolute;
+    top: 80px;
+    right: 25px;
+    z-index: 1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    display: none;
+}
+.search-input input{
+    background-color: white;
+    border: none;
+}
+.search-input input:focus{
+    outline: none;
+}
+/* Navbar */
+
+/* CSS Component Cart */
+.app-cart {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 66.6%;
+    right: 0;
+    background-color: #fff;
+}
+@media (max-width: 767px) {
+    .app-cart {
+        left: 20%;
+    }
+}
+.cart {
+    position: relative;
+    height: 100%;
+}
+.cart-head {
+    text-align: center;
+    padding: 18px 0px;
+    box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
+    font-size: 25px;
+    line-height: 33px;
+    font-weight: bold;
+}
+.cart-head .head-num {
+    background-color: #57CAD5;
+    padding: 0px 5px;
+    border-radius: 100%;
+    color: white;
+    font-size: 20px;
+    line-height: 26px;
+}
+.cart-empty {
+    text-align: center;
+    margin-top: 50px;
+    padding: 10px;
+}
+.cart-empty .empty-text {
+    font-size: 20px;
+    line-height: 26px;
+    color: #CECECE;
+}
+.cart-list {
+    padding: 15px;
+    height: 60vh;
+    overflow: auto;
+}
+.cart-list-box {
+    margin-bottom: 100px;
+}
+.cart-food {
+    height: 109px;
+    display: flex;
+    margin: 20px 0px;
+}
+.cart-food-img {
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+.cart-food-img img{
+    border-radius: 5px;
+    height: 100%;
+}
+.cart-food-detail {
+    width: 70%;
+    padding: 5px 20px;
+}
+.cart-qty {
+    color: #82DE3A;
+    border: 1px solid #82DE3A;
+}
+.cart-qty .btn {
+    background: rgba(130, 222, 58, 0.2);
+    border: 1px solid #82DE3A;
+    border-radius: unset;
+    color: #82DE3A;
+    padding: 10px;
+}
+.cart-price {
+    font-weight: bold;
+}
+.cart-checkout {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 15px;
+    background-color: white;
+}
+.cart-checkout .checkout-total {
+    display: flex;
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: bold;
+}
+.cart-checkout .checkout-total h4{
+    font-size: 24px;
+    line-height: 31px;
+    font-weight: bold;
+}
+/* Cart */
+
+/* CSS Component CardFood */
+.content-img {
+    border-radius: 10px 10px 0px 0px;
+    border: none;
+    background-color: transparent;
+}
+.content-detail {
+    padding:5px 0px;
+}
+.selecting {
+    position: relative;
+}
+.selecting:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px 10px 0px 0px;
+    cursor: pointer;
+}
+.selected:hover::after {
+    content: url('../img/tick.svg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px 10px 0px 0px;
+    cursor: pointer;
+}
+.selected::after {
+    content: url('../img/tick.svg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px 10px 0px 0px;
+    cursor: pointer;
+}
+/* CardFood */
+
+/* CSS Component Sidebar */
+#sidebar {
+    background-color: white;
+}
+.link-sidebar {
+    display: table;
+    cursor: pointer;
+    padding: 20px;
+}
+.link-sidebar:hover {
+    background-color: #ececec;
+}
+/* Sidebar */
+
+/* CSS Component Modal */
+.modal-close {
+    position: absolute;
+    right: 0;
+    top: -5px;
+}
+.add-input {
+    background: #FFFFFF;
+    border: 1px solid #CECECE;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+/* Modal */
+
+/* CSS Components CardHistory */
+.card-history {
+    border-radius: 10px;
+    height: 213px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.card-bg-pink {
+    background: linear-gradient(278.29deg, #FBB2B4 30.05%, rgba(255, 143, 178, 0) 133.19%);
+    filter: drop-shadow(10px 15px 10px rgba(255, 143, 178, 0.25));
+}
+.card-bg-green {
+    background: linear-gradient(278.29deg, #29DFFF 30.05%, rgba(41, 223, 255, 0) 133.19%);
+    filter: drop-shadow(10px 15px 10px rgba(41, 223, 255, 0.25));
+}
+.card-bg-purple {
+    background: linear-gradient(278.29deg, #AB84C8 30.05%, rgba(241, 201, 236, 0) 133.19%);
+    filter: drop-shadow(10px 15px 10px rgba(241, 201, 236, 0.25));
+}
+.card-bg-img-1 {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: -1;
+}
+.card-bg-img-2 {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    z-index: -1;
+}
+.card-bg-img-3 {
+    position: absolute;
+    right: 80px;
+    top: 50px;
+    z-index: -1;
+}
+.card-history-body {
+    margin-left: 10%;
+}
+.card-full-history {
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    height: 422px;
+    padding: 20px;
+    overflow: auto;
+}
+select.drop-time {
+    border: none;
+    border-radius: 10px;
+    padding: 0px 10px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+.chart-label {
+    text-align: center;
+}
+.label-chart {
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 0px;
+}
+/* CardHistory */

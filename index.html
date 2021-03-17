@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <title>ArkaPos</title>
+</head>
+
+<body>
+  <div class="row no-gutters">
+    <!-- component Navbar -->
+    <div class="col-md-8">
+      <div class="app-navbar">
+        <a onclick="hideSidebar()" class="link-menu">
+          <img width="30px" src="assets/img/Hamburger_icon.svg" draggable="false" alt="">
+        </a>
+        <div class="app-navbar-title">Food Items</div>
+        <a class="link-menu float-right" onclick="showSearch()">
+          <img width="30px" src="assets/img/magnifying-glass.svg" draggable="false" alt="">
+        </a>
+        <div id="search" class="search-input">
+          <input type="text" placeholder="Search....">
+        </div>
+      </div>
+    </div>
+    <!-- Navbar -->
+  </div>
+  <div class="row no-gutters">
+    <div class="col-md-8">
+      <div class="app-body d-flex">
+        <!-- component Sidebar -->
+        <div id="sidebar" class="shadow">
+          <a class="link-sidebar">
+            <img width="30px" src="assets/img/fork.svg" draggable="false" alt="">
+          </a>
+          <a class="link-sidebar" href="history.html">
+            <img width="30px" src="assets/img/clipboard.svg" draggable="false" alt="">
+          </a>
+          <a class="link-sidebar" data-toggle="modal" data-target="#add">
+            <img width="30px" src="assets/img/add.svg" draggable="false" alt="">
+          </a>
+          <a class="link-sidebar d-table d-md-none" onclick="showCart()">
+            <img width="30px" src="assets/img/wishlist.png" draggable="false" alt="">
+          </a>
+        </div>
+        <!-- Sidebar -->
+        <div class="app-content">
+          <!-- component CardFood -->
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+            <div class="col mb-4">
+              <div class="card content-img">
+                <div class="selecting" onclick="selecting(0)">
+                  <img src="assets/img/jeremy-ricketts-6ZnhM-xBpos-unsplash.png" class="card-img-top">
+                </div>
+                <div class="card-body content-detail">
+                  <h5 class="card-title">Espresso</h5>
+                  <p class="card-text">Rp. 10.000</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card content-img">
+                <div class="selecting" onclick="selecting(1)">
+                  <img src="assets/img/jeremy-ricketts-6ZnhM-xBpos-unsplash.png" class="card-img-top">
+                </div>
+                <div class="card-body content-detail">
+                  <h5 class="card-title">Espresso</h5>
+                  <p class="card-text">Rp. 10.000</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card content-img">
+                <div class="selecting" onclick="selecting(2)">
+                  <img src="assets/img/jeremy-ricketts-6ZnhM-xBpos-unsplash.png" class="card-img-top">
+                </div>
+                <div class="card-body content-detail">
+                  <h5 class="card-title">Espresso</h5>
+                  <p class="card-text">Rp. 10.000</p>
+                </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card content-img">
+                <div class="selecting" onclick="selecting(3)">
+                  <img src="assets/img/jeremy-ricketts-6ZnhM-xBpos-unsplash.png" class="card-img-top">
+                </div>
+                <div class="card-body content-detail">
+                  <h5 class="card-title">Espresso</h5>
+                  <p class="card-text">Rp. 10.000</p>
+                </div>
+              </div>
+            </div>
+          </div>
+         <!-- CardFood -->
+        </div>
+      </div>
+    </div>
+    <!-- component Cart -->
+    <div id="cart" class="app-cart d-none d-md-block">
+      <div class="cart">
+        <div class="cart-head">
+          Cart <span class="head-num">0</span>
+        </div>
+        <div class="cart-body">
+          <!-- if cart kosong -->
+          <!-- <div class="cart-empty">
+                      <img class="img-fluid" src="assets/img/food-and-restaurant.svg">
+                      <h3 class="font-weight-bold">Your cart is empty</h3>
+                      <h5 class="empty-text">Please add some items from the menu</h5>
+                  </div> -->
+          <!-- cart kosong -->
+          <!-- else -->
+          <div class="cart-list">
+            <div class="cart-list-box">
+              <div class="cart-food">
+                <div class="cart-food-img">
+                  <img src="assets/img/jeremy-ricketts-6ZnhM-xBpos-unsplash.png" class="img-fluid">
+                </div>
+                <div class="cart-food-detail">
+                  <h3>Espresso</h3>
+                  <div class="d-flex align-items-center mt-auto">
+                    <div class="cart-qty">
+                      <a class="btn mr-2">-</a>
+                      0
+                      <a class="btn ml-2">+</a>
+                    </div>
+                    <div class="cart-price ml-auto">
+                      Rp. 1000
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="cart-food">
+                <div class="cart-food-img">
+                  <img src="assets/img/jeremy-ricketts-6ZnhM-xBpos-unsplash.png" class="img-fluid">
+                </div>
+                <div class="cart-food-detail">
+                  <h3>Espresso</h3>
+                  <div class="d-flex align-items-center mt-auto">
+                    <div class="cart-qty">
+                      <a class="btn mr-2">-</a>
+                      0
+                      <a class="btn ml-2">+</a>
+                    </div>
+                    <div class="cart-price ml-auto">
+                      Rp. 1000
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-checkout">
+            <div class="checkout-total">
+              <h4>Total :</h4>
+              <h4 class="ml-auto">Rp. 105.000*</h4>
+            </div>
+            <h5>*Belum termasuk ppn</h5>
+            <button class="btn btn-lightblue btn-block mb-3" data-toggle="modal" data-target="#checkout">Checkout</button>
+            <button class="btn btn-pink btn-block">Cancel</button>
+          </div>
+          <!-- else -->
+        </div>
+      </div>
+    </div>
+    <!-- Cart -->
+  </div>
+  <!-- Components Modal -->
+  <div class="modal fade" id="checkout" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <a type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </a>
+          <div class="head-checkout mb-4">
+            <div class="d-flex font-weight-bold">
+              Checkout
+              <span class="ml-auto">Receipt no: #010410919</span>
+            </div>
+            Cashier :  Pevita Pearce
+          </div>
+          <div class="food-checkout font-weight-bold mb-3">
+            <div class="d-flex mb-1">
+              Coffee Latte 1x
+              <span class="ml-auto">Rp. 15.000</span>
+            </div>
+            <div class="d-flex mb-1">
+              Coffee Latte 1x
+              <span class="ml-auto">Rp. 15.000</span>
+            </div>
+            <div class="d-flex mb-1">
+              Coffee Latte 1x
+              <span class="ml-auto">Rp. 15.000</span>
+            </div>
+            <div class="d-flex mb-2">
+              Ppn 10%
+              <span class="ml-auto">Rp. 10.500</span>
+            </div>
+            <div class="d-flex mb-1">
+              <span class="ml-auto">Total :  Rp. 115.500</span>
+            </div>
+            Payment: Cash
+          </div>
+          <div class="button-checkout">
+            <button class="btn btn-pink btn-block mb-2">Print</button>
+            <button class="btn btn-lightblue btn-block">Send Email</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="add" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-body">
+          <a type="button" class="close modal-close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </a>
+          <h4 class="font-weight-bold mb-3">Add Item</h4>
+          <form>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control add-input" id="staticEmail">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Image</label>
+              <div class="col-sm-10">
+                <input type="file" class="form-control add-input" id="staticEmail">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Price</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control add-input" id="staticEmail">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="staticEmail" class="col-sm-2 col-form-label">Category</label>
+              <div class="col-sm-4">
+                <select id="inputState" class="form-control add-input">
+                  <option selected>Category</option>
+                  <option>...</option>
+                </select>
+              </div>
+            </div>
+            <div class="d-flex">
+             <button type="submit" class="btn btn-pink btn-sm mr-2 ml-auto">Cancel</button>
+             <button type="reset" class="btn btn-lightblue btn-sm">Add</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <script>
+    const hideSidebar = () => {
+      const element = document.getElementById('sidebar')
+      element.classList.toggle('hide')
+    }
+    const selecting = (id) => {
+      const element = document.getElementsByClassName('selecting')
+      element[id].classList.toggle('selected')
+    }
+    const showSearch = () => {
+      const element = document.getElementById('search')
+      element.classList.toggle('show')
+    }
+    const showCart = () => {
+      const element = document.getElementById('cart')
+      element.classList.toggle('show')
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
